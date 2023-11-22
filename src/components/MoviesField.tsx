@@ -29,6 +29,13 @@ const MoviesField: React.FC<MoviesFieldProps> = ({ movies, isLoading }) => {
           {isLoading ? <Spinner color="#5C16C5" size="w-32 h-32" /> : ''}
         </div>
       )}
+      {movies?.results.length === 0 && (
+        <div className="flex w-full items-center justify-center mt-8">
+          <span className="font-semibold">
+            Nenhum resultado para este tipo ou combinação de filtros!
+          </span>
+        </div>
+      )}
     </section>
   );
 };

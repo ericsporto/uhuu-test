@@ -1,4 +1,4 @@
-import { Dispatch, SetStateAction, useState } from 'react';
+import { useState } from 'react';
 
 interface SubHeaderProps {
   description: string;
@@ -35,14 +35,23 @@ const SubHeader: React.FC<SubHeaderProps> = ({
       <p className="text-sm font-bold leading-5 text-theme-neutral mt-12">
         FILTRE POR:
       </p>
-      <div className="px-24 space-x-3 space-y-3">
+      <div className="px-24 flex flex-wrap justify-center gap-3 mt-4">
         {buttonTitles.map((item, index) => (
           <button
             onClick={() => handleButtonClick(item)}
             key={index}
-            className={`h-10 w-fit px-4 bg-theme-neutral rounded text-base font-bold leading-6 ${clickedButtons.includes(item) ? 'bg-theme-buttonMarked text-theme-neutral' : ''}`}
+            className={`h-10 w-fit px-4 flex justify-center items-center rounded text-base font-bold leading-6 ${
+              clickedButtons.includes(item)
+                ? 'bg-theme-buttonMarked text-theme-neutral'
+                : 'bg-theme-neutral'
+            }`}
           >
             {item}
+            {clickedButtons.includes(item) && (
+              <span className="text-theme-buttonMarked rounded-full bg-theme-neutral ml-2 px-1 flex justify-center items-center w-fit text-xs">
+                X
+              </span>
+            )}
           </button>
         ))}
       </div>

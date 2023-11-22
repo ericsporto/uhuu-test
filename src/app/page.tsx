@@ -24,7 +24,9 @@ export default function Home() {
         setSearch={setSearch}
       />
       <MoviesField movies={movies} isLoading={isLoading} />
-      <Paginate data={movies} setPage={setPage} page={page} />
+      {movies && movies?.results.length > 0 && (
+        <Paginate data={movies} setPage={setPage} page={page} />
+      )}
     </main>
   );
 }
