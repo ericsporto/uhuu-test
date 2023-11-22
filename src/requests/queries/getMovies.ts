@@ -5,7 +5,7 @@ import { MoviesListModel } from '@/interfaces/movies';
 async function getMovieList(ctx: QueryFunctionContext) {
   const [, search, page] = ctx.queryKey;
   try {
-    const response = await api.get<MoviesListModel>(`search/movie?query=${search}&page=${page}`);
+    const response = await api.get<MoviesListModel>(`search/movie?query=${search}&page=${page}&language=pt-BR`);
 
     return response.data;
   } catch {}

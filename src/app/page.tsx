@@ -1,8 +1,8 @@
 'use client';
-import Header from '@/components/Header';
-import MoviesField from '@/components/MoviesField';
-import Paginate from '@/components/Paginate';
-import SubHeader from '@/components/SubHeader';
+import Header from '@/components/global/Header';
+import MoviesField from '@/components/searchPage/MoviesField';
+import Paginate from '@/components/global/Paginate';
+import SubHeader from '@/components/searchPage/SubHeader';
 import useFetchMovieList from '@/requests/queries/getMovies';
 import { buttonTitles } from '@/utils/objects/buttonTitles';
 import { useState } from 'react';

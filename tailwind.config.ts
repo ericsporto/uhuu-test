@@ -15,7 +15,8 @@ const config: Config = {
           neutral: "#FFFFFF",
           basic:"#646464",
           border: "#E7E7E7",
-          buttonMarked: "#D18000"
+          buttonMarked: "#D18000",
+          dark: "#131313",
         },
       },
     },

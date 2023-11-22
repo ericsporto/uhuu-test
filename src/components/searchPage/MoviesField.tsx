@@ -1,6 +1,6 @@
 import { MoviesListModel } from '@/interfaces/movies';
 import MovieCard from './MovieCard';
-import Spinner from './Spinner';
+import Spinner from '../global/Spinner';
 
 interface MoviesFieldProps {
   movies?: MoviesListModel;
@@ -22,6 +22,7 @@ const MoviesField: React.FC<MoviesFieldProps> = ({ movies, isLoading }) => {
           background={item.poster_path}
           name={item.title}
           date={item.release_date}
+          id={item.id}
         />
       ))}
       {isLoading && (
