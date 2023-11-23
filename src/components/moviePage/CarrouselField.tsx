@@ -7,7 +7,7 @@ interface CarrouselProps {
 
 const CarrouselField: React.FC<CarrouselProps> = ({ movie }) => {
   return (
-    <section className="w-full flex flex-col pt-24 px-28">
+    <section className="w-full flex flex-col pt-12 lg:pt-24 px-4 lg:px-28">
       <span className="font-bold text-theme-dark text-[28px] leading-8">
         Elenco original
       </span>

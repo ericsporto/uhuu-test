@@ -3,7 +3,7 @@ import Image from 'next/image';
 
 function Header() {
   return (
-    <header className="flex h-14 w-full items-center justify-start px-28 bg-theme-secondary">
+    <header className="flex h-14 w-full items-center md:justify-start px-28 bg-theme-secondary">
       <Image
         src="/logo-uhuu.svg"
         alt="uhuu-logo"

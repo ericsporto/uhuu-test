@@ -26,14 +26,18 @@ const MovieCard: React.FC<MovieCardProps> = ({
   };
 
   return (
-    <div className="w-full max-w-[176px] h-[320px] mb-10">
+    <div className="w-full max-w-[156px] md:max-w-[176px] h-[232px] md:h-[320px] mb-10 mt-2">
       <div
         onClick={() => handleRedirect(id)}
-        className="w-full h-[264px] bg-contain rounded overflow-hidden border border-[#E7E7E7] cursor-pointer hover:opacity-80"
+        className="w-full h-[232px] md:h-[264px] bg-contain rounded overflow-hidden border border-[#E7E7E7] cursor-pointer hover:opacity-80"
         style={cardStyle}
       ></div>
-      <p className="font-bold text-base leading-6 mt-2">{name}</p>
-      <p className="font-bold text-sm leading-6 text-theme-basic">{date}</p>
+      <p className="font-bold text-sm md:text-base leading-5 md:leading-6 mt-2">
+        {name}
+      </p>
+      <p className="font-bold text-xs md:text-sm leading-[18px] md:leading-6 text-theme-basic">
+        {date}
+      </p>
     </div>
   );
 };

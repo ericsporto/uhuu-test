@@ -27,20 +27,19 @@ const SubHeader: React.FC<SubHeaderProps> = ({
     }
   };
   return (
-    <section className="flex flex-col w-full h-[449px] bg-theme-primary p-20 text-center">
-      <div className="text-theme-neutral font-bold text-5xl px-56 text-center leading-[56px]">
+    <section className="flex flex-col w-full md:h-[449px] bg-theme-primary p-5 lg:p-20 text-left sm:text-center">
+      <div className="text-theme-neutral font-bold text-2xl xl:text-5xl lg:px-56 text-left lg:text-center leading-7 lg:leading-[56px] mt-6 md:mt-0">
         {description}
       </div>
-
-      <p className="text-sm font-bold leading-5 text-theme-neutral mt-12">
+      <p className="text-sm font-bold leading-5 text-theme-neutral mt-10 lg:mt-12">
         FILTRE POR:
       </p>
-      <div className="px-24 flex flex-wrap justify-center gap-3 mt-4">
+      <div className="lg:px-24 flex flex-wrap lg:justify-center gap-3 mt-4">
         {buttonTitles.map((item, index) => (
           <button
             onClick={() => handleButtonClick(item)}
             key={index}
-            className={`h-10 w-fit px-4 flex justify-center items-center rounded text-base font-bold leading-6 ${
+            className={`h-8 lg:h-10 w-fit px-5 md:px-4 flex justify-center items-center rounded text-sm md:text-base font-bold leading-5 md:leading-6 ${
               clickedButtons.includes(item)
                 ? 'bg-theme-buttonMarked text-theme-neutral'
                 : 'bg-theme-neutral'

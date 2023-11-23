@@ -18,7 +18,7 @@ const MoviePage: React.FC<MoviePageProps> = ({ params }) => {
   const {data: recommendations} = useFetchRecommendations()
 
   return (
-    <main className="flex flex-col min-h-screen items-start max-w-[1440px] m-auto bg-[#F3F3F3]">
+    <main className="flex flex-col min-h-screen items-start max-w-[1440px] m-auto md:bg-[#F3F3F3]">
       <Header />
       <SubMovieHeader movie={movie} />
       <CarrouselField movie={movie} />

@@ -13,7 +13,7 @@ const MovieDetailCard: React.FC<MovieCardProps> = ({ background }) => {
 
   return (
     <div
-      className="w-[383px] h-[574px] bg-contain rounded-lg overflow-hidden border border-[#E7E7E7]"
+      className="w-[186px] lg:w-[383px] h-[279px] lg:h-[574px] bg-contain bg-no-repeat rounded-lg overflow-hidden border border-[#E7E7E7]"
       style={cardStyle}
     ></div>
   );

@@ -57,7 +57,7 @@ const Paginate: React.FC<PaginationProps> = ({ data, setPage, page }) => {
   };
 
   return (
-    <div className="flex my-7 w-full justify-center pb-56">
+    <div className="flex my-7 mt-24 md:mt-0 w-full justify-center pb-56">
       <ul className="flex gap-x-8">
         {page > 3 && (
           <li>

@@ -13,7 +13,7 @@ const MoviesField: React.FC<MoviesFieldProps> = ({ movies, isLoading }) => {
       className={
         isLoading
           ? 'flex w-full items-center justify-center'
-          : 'flex w-full flex-wrap gap-8 justify-start px-28 mt-8'
+          : 'flex w-full flex-wrap gap-4 md:gap-8 justify-between lg:justify-start px-4 lg:px-28 mt-8'
       }
     >
       {movies?.results.map((item) => (
@@ -31,7 +31,7 @@ const MoviesField: React.FC<MoviesFieldProps> = ({ movies, isLoading }) => {
         </div>
       )}
       {movies?.results.length === 0 && (
-        <div className="flex w-full items-center justify-center mt-8">
+        <div className="flex w-full items-center justify-center pb-8 md:py-8">
           <span className="font-semibold">
             Nenhum resultado para este tipo ou combinação de filtros!
           </span>

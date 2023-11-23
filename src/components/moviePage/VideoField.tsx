@@ -15,19 +15,21 @@ const VideoField: React.FC<VideoProps> = ({ movie }) => {
   };
 
   return (
-    <section className="w-full flex flex-col pt-10 px-28">
+    <section className="w-full flex flex-col pt-10 px-4 lg:px-28">
       <span className="font-bold text-theme-dark text-[28px] leading-8">
         Trailer
       </span>
       <div className="w-full py-8 flex overflow-hidden">
         {movie?.video ? (
-          <video width="907" height="510" controls>
+          <video  className="w-full h-full"
+          controls
+          style={{ maxWidth: '907px' }} >
             <source src={path} type="video/mp4" />
             Seu navegador não suporta o elemento de vídeo.
           </video>
         ) : (
           <div
-            className="w-[907px] h-[510px] bg-contain bg-no-repeat bg-theme-neutral rounded overflow-hidden border border-[#E7E7E7]"
+            className="w-full lg:w-[907px] h-[182px] lg:h-[510px] bg-contain bg-no-repeat bg-theme-neutral rounded overflow-hidden border border-[#E7E7E7]"
             style={cardStyle}
           ></div>
         )}
