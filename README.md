@@ -1,36 +1,48 @@
-This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
+# Uhuu Teste Técnico
 
-## Getting Started
+Este projeto foi desenvolvido como um teste técnico no processo seletivo para o cargo de desenvolvedor frontend.
 
-First, run the development server:
+## O Projeto
 
-```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
-```
+Trata-se de uma página de pesquisa de filmes onde o usuário, após clicar em algum botão de filtragem, poderá ver os detalhes do filme escolhido na listagem.
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+## Para rodar localmente
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+Para executar o projeto, você precisa cloná-lo usando o seguinte comando:
+git clone https://github.com/ericsporto/uhuu-test.git
 
-This project uses [`next/font`](https://nextjs.org/docs/basic-features/font-optimization) to automatically optimize and load Inter, a custom Google Font.
+Após clonar o repositório, navegue até o diretório do projeto em seu terminal e siga estas etapas:
+Instale as dependências do projeto:
 
-## Learn More
+`yarn`
 
-To learn more about Next.js, take a look at the following resources:
+Inicie o servidor de desenvolvimento:
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+`yarn dev`
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js/) - your feedback and contributions are welcome!
+## Tecnologias usadas
+Para desenvolver o projeto foram utilizadas as seguintes tecnologias e bibliotecas:
 
-## Deploy on Vercel
+.ReactJs e NextJs para construir o Frontend.
+=> Porque o NextJs e não React puro?
+   R: Porque quis demonstrar que além do React, também possuo conhecimentos em NextJs.
+    Para esse tipo de aplicação, acredito que não seria necessário a utilização do NextJs por ser uma aplicação pequena. A medida que muitos acessos fossem requeridos, acredito que o NextJs teria uma melhor atuação quanto a renderizações do lado do servidor. Isso poderia melhorar o desempenho da aplicação.
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+.Zustand para gestão estadual e persist de dados.
+=> Porque o Zustand?
+   R: Na verdade, utilizei o Zustand para demonstrar o conhecimento em gerenciamento de   estados, porém utilizei também do localStorage para persistir dados de layout dos botões, como pode ser analisado no código. Apenas quis demonstrar que posso utilizar várias abordagens para resolver um mesmo problema.
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/deployment) for more details.
+
+.TypeScript para verificação de tipos e redução do riscos de bugs na produção.
+
+.React-Query e Axios para requisições.
+=> Porque o React-Query e não somente o Axios?
+   R: Gosto do react-query por conta do contexto próprio e pela facilidade de obter um estado de loading, success e outros dados em uma requisição. Crio, em arquivo separado um hook que me traz somente o response.data da requisição e todos os outros atributos do react-query. Ao chamar o hook dentro de um componente e passar os parâmetros de pesquisa, consigo deixar o código mais limpo, legível e de fácil manutenção. A paginação também fica mais simples de ser feita e a qualquer mudança no estado do número da página passado, o refetch é feito automaticamente. Não precisei fazer um mutate (post, delete, etc) neste projeto, mas ao fazer, fica muito fácil fazer um refetch com o recurso de refetch próprio do react-query ou até mesmo invalidando uma query (que é um string associada a um get específico), atualizando a minha aplicação inteira por onde o resultado daquele get passar. Acho muito prático e vantajoso. Por isso a escolha.
+
+.Tailwind para estilização e layout.
+=> Porque Tailwind?
+   R: Já trabalhei com todas as formas de CSS possíveis: Puro, Styled Components, Material UI, Chakra UI, Bootstrap, etc. Gosto das suas classes que evitam conflitos e fica muito tranquilo trabalhar a responsividade das aplicações.
+
+
+## Author
+Eric de Souza Porto Carvalho
