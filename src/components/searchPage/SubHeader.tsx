@@ -1,4 +1,5 @@
-import { useState } from 'react';
+'use client';
+import { useEffect, useState } from 'react';
 
 interface SubHeaderProps {
   description: string;
@@ -11,7 +12,20 @@ const SubHeader: React.FC<SubHeaderProps> = ({
   buttonTitles,
   setSearch,
 }) => {
-  const [clickedButtons, setClickedButtons] = useState<string[]>([]);
+  const isClient = typeof window !== 'undefined';
+
+  const [clickedButtons, setClickedButtons] = useState<string[]>(() => {
+    if (isClient) {
+      try {
+        const persistedButtons = localStorage.getItem('clickedButtons');
+        return persistedButtons ? JSON.parse(persistedButtons) : [];
+      } catch (error) {
+        console.error('Error accessing localStorage:', error);
+        return [];
+      }
+    }
+    return [];
+  });
 
   const handleButtonClick = (title: string) => {
     if (clickedButtons.includes(title)) {
@@ -26,6 +40,17 @@ const SubHeader: React.FC<SubHeaderProps> = ({
       setSearch(updatedButtons.join('+'));
     }
   };
+
+  useEffect(() => {
+    if (isClient) {
+      try {
+        localStorage.setItem('clickedButtons', JSON.stringify(clickedButtons));
+      } catch (error) {
+        console.error('Error accessing localStorage:', error);
+      }
+    }
+  }, [clickedButtons]);
+
   return (
     <section className="flex flex-col w-full md:h-[449px] bg-theme-primary p-5 lg:p-20 text-left sm:text-center">
       <div className="text-theme-neutral font-bold text-2xl xl:text-5xl lg:px-56 text-left lg:text-center leading-7 lg:leading-[56px] mt-6 md:mt-0">

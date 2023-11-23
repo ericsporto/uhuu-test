@@ -4,7 +4,7 @@ import { Dispatch, SetStateAction } from 'react';
 
 interface PaginationProps {
   data?: MoviesListModel;
-  setPage: Dispatch<SetStateAction<number>>;
+  setPage: (page: number) => void;
   page: number;
 }
 

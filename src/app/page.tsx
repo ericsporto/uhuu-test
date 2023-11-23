@@ -5,15 +5,21 @@ import Paginate from '@/components/global/Paginate';
 import SubHeader from '@/components/searchPage/SubHeader';
 import useFetchMovieList from '@/requests/queries/getMovies';
 import { buttonTitles } from '@/utils/objects/buttonTitles';
-import { useState } from 'react';
+import useSearchStore from '@/stores/searchStore';
+import { useEffect } from 'react';
 
 export default function Home() {
-  const [page, setPage] = useState(1);
-  const [search, setSearch] = useState('');
+  const { search, setSearch, page, setPage } = useSearchStore();
   const description =
     'Milhões de filmes, séries e pessoas para descobrir. Explore já.';
 
   const { data: movies, isLoading } = useFetchMovieList([search], page);
+
+  useEffect(() => {
+    if (movies?.results.length === 0) {
+      setPage(1);
+    }
+  }, [movies?.results]);
 
   return (
     <main className="flex flex-col min-h-screen items-start max-w-[1440px] m-auto">
